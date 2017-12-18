@@ -2,9 +2,9 @@ module Main where
 
 import Prelude hiding (sequence)
 import Control.Applicative (liftA2)
+import Control.Monad (forever)
 import Control.Exception (catch, IOException)
-import System.Random
-import Control.Monad.Random hiding (sequence)
+import Control.Monad.Random (Rand, RandomGen, uniform, evalRandIO)
 import Text.Parsec hiding (choice)
 import Text.Parsec.Char
 
