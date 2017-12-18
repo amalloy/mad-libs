@@ -2,6 +2,7 @@ module Main where
 
 import Prelude hiding (sequence)
 import Control.Applicative (liftA2)
+import Control.Exception (catch, IOException)
 import System.Random
 import Control.Monad.Random hiding (sequence)
 import Text.Parsec hiding (choice)
@@ -34,4 +35,7 @@ main = do
   stdin <- getContents
   case parse flow "stdin" stdin of
     Left error -> print error
-    Right tree -> putStrLn . unwords =<< evalRandIO (construct tree)
+    Right tree -> runForever `catch` abort
+      where runForever = forever $ putStrLn . unwords =<< evalRandIO (construct tree)
+            abort :: IOException -> IO ()
+            abort = const $ pure ()

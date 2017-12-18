@@ -1,7 +1,8 @@
 # mad-libs
 
-Accepts a .flow grammar file on stdin, and writes to stdout a random sentence
-from that grammar.
+Accepts a .flow grammar file on stdin, and writes to stdout random sentences
+from that grammar, continuing forever until stdout is closed (like
+`/usr/bin/yes`).
 
 ## .flow grammar rules
 
