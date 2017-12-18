@@ -17,9 +17,7 @@ construct (Sequence xs) = concat <$> traverse construct xs
 construct (Choose xs) = construct =<< uniform xs
 
 flow, sequence, choice, force :: Parser (Flow String)
-
 flow = spaces *> (sequence <|> choice <|> force) <* spaces
-
 sequence = char '(' *> (Sequence <$> sepBy1 flow (oneOf ",|")) <* char ')'
 choice = char '[' *> (Choose <$> sepBy1 flow (oneOf ",|")) <* char ']'
 force = Force <$> escapedTerminators "()[]|,"
