@@ -24,3 +24,19 @@ sequence = '(' rule (',' rule)* ')'
 sequences. If a `text` element must contain one of those special characters, it
 may be scaped with a leading backslash. Leading and trailing spaces are ignored
 in all rules.
+
+## Sample usage
+
+```
+$ stack exec calendar-facts < xkcd.flow  | head
+Did you know that the latest sunset drifts out of sync with the moon because of a decree by the Pope in the 1500s ? Apparently that's why we have leap seconds .
+Did you know that the blood moon drifts out of sync with the Zodiac because of a decree by the Pope in the 1500s ? Apparently it was even more extreme during the 1990s .
+Did you know that the Summer Olympics might happen twice this year because of magnetic field reversal ? Apparently it's getting worse and no one knows why .
+Did you know that daylight savings time drifts out of sync with the sun because of an arbitrary decision by FDR ? Apparently it's getting worse and no one knows why .
+Did you know that leap year might not happen this year because of magnetic field reversal ? Apparently there's a proposal to fix it, but it might be unconstitutional .
+Did you know that the earliest sunset drifts out of sync with the moon because of magnetic field reversal ? Apparently it's getting worse and no one knows why .
+Did you know that daylight savings time might not happen this year because of magnetic field reversal ? Apparently it was even more extreme during the bronze age .
+Did you know that Toyota Truck Month might not happen this year because of magnetic field reversal ? Apparently there's a proposal to fix it, but it is stalled in Congress .
+Did you know that the latest sunrise might not happen this year because of precession of the moon ? Apparently that's why we have leap seconds .
+Did you know that Toyota Truck Month drifts out of sync with the Gregorian Calendar because of a decree by the Pope in the 1500s ? Apparently it was even more extreme during the bronze age .
+```
