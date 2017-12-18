@@ -19,8 +19,8 @@ flow, sequence, choice, force :: Parser (Flow String)
 
 flow = spaces *> (sequence <|> choice <|> force) <* spaces
 
-sequence = char '(' *> (Sequence <$> sepBy1 flow (char ',')) <* char ')'
-choice = char '[' *> (Choose <$> sepBy1 flow (char '|')) <* char ']'
+sequence = char '(' *> (Sequence <$> sepBy1 flow (oneOf ",|")) <* char ')'
+choice = char '[' *> (Choose <$> sepBy1 flow (oneOf ",|")) <* char ']'
 force = Force <$> escapedTerminators "()[]|,"
 
 escapedTerminators :: [Char] -> Parser String
