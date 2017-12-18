@@ -25,7 +25,8 @@ force = Force <$> escapedTerminators "()[]|,"
 
 escapedTerminators :: [Char] -> Parser String
 escapedTerminators specials = go
-  where go = lookAhead (oneOf specials) *> pure [] <|> liftA2 (:) (escape <|> anyChar) go
+  where go = lookAhead (try $ many space *> (oneOf specials)) *> pure []
+         <|> liftA2 (:) (escape <|> anyChar) go
         escape = char '\\' *> anyChar
 
 main :: IO ()
