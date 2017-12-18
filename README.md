@@ -28,7 +28,7 @@ in all rules.
 ## Sample usage
 
 ```
-$ stack exec calendar-facts < xkcd.flow  | head
+$ stack exec mad-libs < xkcd.flow  | head
 Did you know that the latest sunset drifts out of sync with the moon because of a decree by the Pope in the 1500s ? Apparently that's why we have leap seconds .
 Did you know that the blood moon drifts out of sync with the Zodiac because of a decree by the Pope in the 1500s ? Apparently it was even more extreme during the 1990s .
 Did you know that the Summer Olympics might happen twice this year because of magnetic field reversal ? Apparently it's getting worse and no one knows why .
