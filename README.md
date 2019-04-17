@@ -22,7 +22,7 @@ sequence = '(' rule (',' rule)* ')'
 
 `text` is any number of characters which are not used to define choices or
 sequences. If a `text` element must contain one of those special characters, it
-may be scaped with a leading backslash. Leading and trailing spaces are ignored
+may be escaped with a leading backslash. Leading and trailing spaces are ignored
 in all rules.
 
 ## Sample usage
