@@ -33,7 +33,7 @@ main = do
   stdin <- getContents
   case parse flow "stdin" stdin of
     Left error -> print error
-    Right tree -> runForever `catch` abort
-      where runForever = forever $ putStrLn . unwords =<< evalRandIO (construct tree)
+    Right tree -> forever run `catch` abort
+      where run = putStrLn . unwords =<< evalRandIO (construct tree)
             abort :: IOException -> IO ()
             abort = const $ pure ()
